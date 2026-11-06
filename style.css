@@ -1,0 +1,112 @@
+/* 7DAY 그림체: 흑백 + 굵은 글씨 + 노란 형광 + 피아노 건반 띠 */
+:root {
+  --ink: #111;
+  --mute: #666;
+  --line: #e2e2e2;
+  --paper: #fff;
+  --bg: #f4f4f2;
+  --hl: #fff1c1;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.top {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 560px; margin: 0 auto; padding: 14px 16px 0;
+}
+.keys {
+  width: 120px; height: 14px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 8px, var(--paper) 8px 14px);
+  border: 2px solid var(--ink);
+}
+.brand { font-weight: 800; font-size: 15px; letter-spacing: -0.2px; }
+main { max-width: 560px; margin: 0 auto; padding: 12px 16px 8px; }
+.card {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  margin: 12px 0;
+}
+h1 { font-size: 28px; line-height: 1.3; font-weight: 900; letter-spacing: -0.6px; margin: 4px 0 10px; }
+h2 { font-size: 20px; line-height: 1.4; font-weight: 800; margin: 0 0 12px; }
+h1:focus, h2:focus { outline: none; }
+.kicker { margin: 0; font-size: 14px; font-weight: 700; color: var(--mute); }
+.sub { margin: 4px 0; color: var(--mute); font-size: 16px; }
+.block { margin: 22px 0; }
+.label { margin: 0 0 10px; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+button, .primary { font: inherit; cursor: pointer; touch-action: manipulation; }
+.chip {
+  border: 2px solid var(--ink); background: var(--paper); color: var(--ink);
+  border-radius: 999px; padding: 8px 16px; font-weight: 700; font-size: 16px;
+}
+.chip[aria-pressed='true'] { background: var(--ink); color: var(--paper); }
+.primary {
+  display: block; width: 100%; text-align: center; text-decoration: none;
+  background: var(--ink); color: var(--paper); border: 0;
+  border-radius: 14px; padding: 16px; font-size: 18px; font-weight: 800;
+}
+.ghost {
+  flex: 1; background: var(--paper); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 14px; padding: 12px; font-weight: 700; font-size: 16px;
+}
+.row { display: flex; gap: 8px; margin-top: 10px; }
+
+.progress { height: 8px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.bar { height: 100%; background: var(--ink); }
+.notice { margin: 0 0 12px; padding: 8px 12px; background: var(--hl); border-radius: 10px; font-weight: 700; font-size: 15px; }
+.count { margin: 10px 0 0; font-size: 14px; font-weight: 700; color: var(--mute); }
+.question { font-size: 23px; line-height: 1.45; font-weight: 800; margin: 18px 0 24px; min-height: 3em; }
+.choices { display: grid; gap: 10px; }
+.choice {
+  background: var(--paper); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 14px; padding: 15px; font-size: 18px; font-weight: 700;
+}
+/* 고른 답은 검정으로 뒤집어 '이전'으로 돌아왔을 때도 한눈에 보이게 */
+.choice[aria-pressed='true'] { background: var(--ink); color: var(--paper); }
+.choice:active { transform: scale(.98); }
+.back { margin-top: 16px; background: none; border: 0; color: var(--mute); font-size: 15px; padding: 6px 0; }
+
+.result { text-align: center; }
+.code {
+  display: inline-block; margin: 12px 0 0; padding: 2px 14px;
+  background: var(--hl); font-size: 44px; font-weight: 900; letter-spacing: 6px;
+}
+.letters { list-style: none; padding: 0; margin: 4px 0 14px; display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 14px; color: var(--mute); font-size: 15px; }
+.letters b { color: var(--ink); }
+.line { font-size: 17px; margin: 0 0 6px; }
+.axes { margin-top: 18px; text-align: left; }
+.axis { margin: 12px 0; }
+.axis-head { display: flex; justify-content: space-between; font-size: 14px; color: var(--mute); }
+.axis-head .win { color: var(--ink); font-weight: 800; }
+.axis-head .tie { color: var(--ink); font-weight: 700; }
+.track { position: relative; height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; margin-top: 4px; }
+.fill { position: absolute; top: 0; bottom: 0; background: var(--ink); }
+.fill.from-left { left: 0; }
+.fill.from-right { right: 0; }
+.fill.half { left: 25%; background: var(--mute); }
+
+.tips, .titles { margin: 0; padding-left: 20px; }
+.tips li, .titles li { margin: 8px 0; font-size: 16px; }
+.titles li { font-weight: 700; }
+.note { margin: 10px 0 0; font-size: 14px; color: var(--mute); }
+.cta { background: var(--hl); }
+.cta p { margin: 0 0 16px; }
+.copy-msg { margin: 10px 0 0; font-size: 14px; }
+.copy-input { width: 100%; margin-top: 8px; padding: 10px; font: inherit; font-size: 14px; border: 2px solid var(--ink); border-radius: 10px; background: var(--paper); }
+
+.foot { max-width: 560px; margin: 0 auto; padding: 8px 16px 32px; font-size: 13px; color: var(--mute); text-align: center; }
+.foot a { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) { .choice:active { transform: none; } }

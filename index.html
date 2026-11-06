@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 배포할 때는 _headers 의 같은 정책(+frame-ancestors)이 헤더로 붙는다. 폰트는 pretendard v1.3.9 경로만 허용 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/; font-src https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>우리 학원 블로그 유형 테스트 · 7DAY</title>
+<meta name="description" content="학원 대표님을 위한 블로그 유형 테스트. 질문 16개, 2분이면 우리 학원에 맞는 블로그 방향과 첫 글 제목을 알려 드려요.">
+<meta property="og:title" content="우리 학원 블로그 유형 테스트">
+<meta property="og:description" content="질문 16개 · 2분 · 16가지 유형. 우리 학원에 맞는 블로그 방향을 알려 드려요.">
+<meta property="og:type" content="website">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<!-- integrity 는 2026-10-27 에 받은 v1.3.9 원본 파일의 sha384. .min.css 는 jsDelivr 가 즉석에서 줄인 파일이라 SRI 를 걸면 안 된다(파일 머리말). 버전을 바꾸면 값도 다시 잰다 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" integrity="sha384-2nNKoOPayicGa+aRguOQuiZP+RqQ4G3jalfDeOgftkKD7zBM2gJXTwcFqCZltdv0" crossorigin="anonymous">
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="top"><span class="keys" aria-hidden="true"></span><span class="brand" id="brand"></span></header>
+<main id="app">
+  <!-- app.js 가 뜨면 이 안내는 바로 지워진다. 모듈을 못 읽는 환경(파일을 바로 연 경우 등)에서만 남는다 -->
+  <p class="card">테스트를 여는 중이에요. 이 화면이 계속 보이면 새로고침하거나, 인스타 앱 밖 브라우저(사파리·크롬)로 열어 주세요.</p>
+  <noscript><p class="card">이 테스트는 자바스크립트를 켜야 열려요.</p></noscript>
+</main>
+<footer class="foot" id="foot"></footer>
+</body>
+</html>
